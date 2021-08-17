@@ -69,17 +69,15 @@ const GanadorComponent: React.FC<any> = ({ userData }) => (
   </InfoPage>
 );
 
-interface EndScreenWrapperProps {
-  user?: any;
-}
+const EndScreenWrapper = () => {
+  const [user, setUser] = useState("");
 
-const EndScreenWrapper = ({ user }: EndScreenWrapperProps) => {
-  if (JSON.parse(localStorage.getItem("userData")) || user) {
-    return (
-      <GanadorComponent
-        userData={user ? user : JSON.parse(localStorage.getItem("userData"))}
-      />
-    );
+  useEffect(() => {
+    setUser(JSON.parse(localStorage.getItem("userData")));
+  }, []);
+
+  if (user) {
+    return <GanadorComponent userData={user} />;
   }
   return <p>Loading</p>;
 };

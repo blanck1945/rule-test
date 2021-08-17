@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useState } from "react";
 import styled from "styled-components";
 import InfoPage from "./infoPage";
 
-const ContainerWrapper = styled.div``;
+const ContainerWrapper = styled.div`
+  width: 20%;
+`;
 
 const BottomContainer = styled.div`
   background: #a52a2a;
@@ -19,15 +22,35 @@ const HeaderContainer = styled.div`
   display: flex;
   flex-direction: column;
   text-align: center;
-  margin-bottom: 1.2rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  background: #edf3fb;
+  border-radius: 8px;
+  padding: 1rem;
 `;
 
 const TextHeader = styled.h3`
-  margin-bottom: 0.2rem;
+  font-family: "Comfortaa", sans-serif;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 150%;
+  font-weight: bold;
+  letter-spacing: 0.15px;
+  color: #002350;
+  align-self: center;
 `;
 
 const ExchangeScreen = ({ router }) => {
-  console.warn(router.location.search);
+  const [routerData, setRouterData] = useState(undefined);
+
+  useEffect(() => {
+    setRouterData(router);
+  }, []);
+
+  const replaceDash = (value: string) => {
+    const valuesToMap = value.split("");
+    const newArr = valuesToMap.map((char) => (char === "_" ? " " : char));
+    return newArr.join("");
+  };
 
   return (
     <InfoPage>
@@ -35,22 +58,29 @@ const ExchangeScreen = ({ router }) => {
         <HeaderContainer>
           <TextHeader>Email</TextHeader>
           <TextHeader>
-            {router.location.search.split("?")[1].split("&")[0]}
-          </TextHeader>
-        </HeaderContainer>
-        <HeaderContainer>
-          <TextHeader>Premio</TextHeader>
-          <TextHeader>
-            {router.location.search
-              .split("?")[1]
-              .split("&")[1]
-              .replace("_", " ")}
+            {routerData
+              ? routerData?.location?.search.split("?")[1].split("&")[0]
+              : "SSR"}
           </TextHeader>
         </HeaderContainer>
         <HeaderContainer>
           <TextHeader>Comercio</TextHeader>
           <TextHeader>
-            {router.location.search.split("?")[1].split("&")[2]}
+            {routerData
+              ? replaceDash(
+                  routerData?.location?.search.split("?")[1].split("&")[1]
+                )
+              : "SSR"}
+          </TextHeader>
+        </HeaderContainer>
+        <HeaderContainer>
+          <TextHeader>Premio</TextHeader>
+          <TextHeader>
+            {routerData
+              ? replaceDash(
+                  routerData?.location?.search.split("?")[1].split("&")[2]
+                )
+              : "SSR"}
           </TextHeader>
         </HeaderContainer>
         <BottomContainer>Sin Canjear</BottomContainer>
