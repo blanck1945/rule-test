@@ -39,7 +39,7 @@ const Ganador: React.FC<PageProps> = () => {
       subject: "Premios tap",
       to_name: "auntap",
       message: `Usa este link para canjear tu premio ${
-        process.env.PAGE_URL
+        process.env.GATSBY_PAGE_URL
       }?${addDash(user.player.email.value)}&${addDash(
         user.prize.comercio
       )}&${addDash(user.prize.premio)}`,
@@ -48,10 +48,10 @@ const Ganador: React.FC<PageProps> = () => {
     if (user.email.sendEmail) {
       emailjs
         .send(
-          process.env.EMAIL_JS_SERVICE_ID,
-          process.env.EMAIL_JS_TEMPLATE_ID,
+          process.env.GATSBY_EMAIL_JS_SERVICE_ID,
+          process.env.GATSBY_EMAIL_JS_TEMPLATE_ID,
           templateParams,
-          process.env.EMAIL_JS_USER_ID
+          process.env.GATSBY_EMAIL_JS_USER_ID
         )
         .then(
           (response) => {
