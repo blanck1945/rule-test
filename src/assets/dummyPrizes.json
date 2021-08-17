@@ -1,0 +1,92 @@
+[
+    {
+        "name": "Doble cuarto de libra",
+        "id": "9160",
+        "brandId": "123"
+    },
+    {
+        "name": "Helado combinado",
+        "id": "9157",
+        "brandId": "123"
+    },
+    {
+        "name": "Café con leche",
+        "id": "9109",
+        "brandId": "123"
+    },
+    {
+        "name": "Pinta IPA",
+        "id": "9151",
+        "brandId": "456"
+    },
+    {
+        "name": "Papas con cheddar",
+        "id": "9101",
+        "brandId": "456"
+    },
+    {
+        "name": "Picada para dos",
+        "id": "9197",
+        "brandId": "456"
+    },
+    {
+        "name": "Pizza de muzarella",
+        "id": "9123",
+        "brandId": "789"
+    },
+    {
+        "name": "Pizza de fugazzetta",
+        "id": "9185",
+        "brandId": "789"
+    },
+    {
+        "name": "Docena de empanadas",
+        "id": "9134",
+        "brandId": "789"
+    },
+    {
+        "name": "Hamburguesa vegana",
+        "id": "9130",
+        "brandId": "012"
+    },
+    {
+        "name": "Milanesa de soja",
+        "id": "9194",
+        "brandId": "012"
+    },
+    {
+        "name": "Smoothie",
+        "id": "9141",
+        "brandId": "012"
+    },
+    {
+        "name": "Frappuccino",
+        "id": "9188",
+        "brandId": "345"
+    },
+    {
+        "name": "Scon de queso",
+        "id": "9195",
+        "brandId": "345"
+    },
+    {
+        "name": "Dona glaseada",
+        "id": "9154",
+        "brandId": "345"
+    },
+    {
+        "name": "Arrolladitos primavera",
+        "id": "9168",
+        "brandId": "678"
+    },
+    {
+        "name": "Combo Tokyo",
+        "id": "9104",
+        "brandId": "678"
+    },
+    {
+        "name": "Wok de ternera",
+        "id": "9131",
+        "brandId": "678"
+    }
+]
